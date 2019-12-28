@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { BrowserRouter as Router, Route} from 'react-router-dom'
+import AllNotes from './components/allNotes'
+import OneNote from './components/oneNote'
+import EditNote from './components/editNote'
+import CreateNote from './components/createNote'
+import CreateUser from './components/createUser'
+import Navbar from './components/Navbar'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <Router>
+          <Navbar />
+          <br/>
+          <div className="container">
+            <Route  path="/" exact component={AllNotes} /> 
+            <Route  path="/create" component={CreateNote} />
+            <Route  path="/user" component={CreateUser} />
+            <Route  path="/edit/:id" component={EditNote} />          
+            <Route  path="/oneNote/:id" component={OneNote} /> 
+          </div>
+        </Router>
   );
 }
 

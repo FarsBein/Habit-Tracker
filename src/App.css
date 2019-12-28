@@ -1,38 +1,34 @@
-.App {
-  text-align: center;
+.container {
+  display: block;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card {
+  border: 1px solid black;
+  float: left;
+  margin: 1px;
+  padding: 10px 3px;
+  /*setting width for each and every card element as well as -10px for removing the margin width for 5 elements*/
+  width: calc( 100% / 5 - 10px);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+/*first element*/
+
+.container .card:first-child {
+  margin-left: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+/*last element of the first row*/
+
+.container .card:nth-child(5n) {
+  margin-right: 0;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*first-element of the 2nd row*/
+
+.container .card:nth-child(5n+1) {
+  margin-left: 0;
 }
