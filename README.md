@@ -1,4 +1,4 @@
-## Habit Traker
+## Habit Tracker
 
 Used to track daily activities and habits. 
 
