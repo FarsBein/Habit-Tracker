@@ -22,6 +22,6 @@ Used to track daily activities and habits.
 
 2- open the backend file and run nodemon server.js
 
-3- open this file on a seprate terminal an enter npm start
+3- open this file on a separate terminal and enter npm start
 
 4- open 'http://localhost:3000/' on browser
