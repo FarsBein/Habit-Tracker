@@ -7,7 +7,7 @@ const OneNote = ({match}) => {
     const [loading,setLoading] = useState(true)
     const [edit,setEdit] = useState(false)
     const [updated,setUpdated] = useState({
-        username: '',
+        topic: '',
         description: '',
         duration: 0,
         date: ''
@@ -56,11 +56,11 @@ const OneNote = ({match}) => {
                     <Form>
                         <Form.Group>
                             <Form.Label>Topic</Form.Label>
-                            <Form.Control type="text" name='username' placeholder="Enter Topic" onChange={HandleChange}/>
+                            <Form.Control type="text" name='topic' placeholder="Enter Topic" onChange={HandleChange}/>
                         </Form.Group>
 
                         <Form.Group>
-                            <Form.Label>Duration</Form.Label>
+                            <Form.Label>Da</Form.Label>
                             <Form.Control type="number" placeholder="Duration" onChange={HandleChange}/>
                         </Form.Group>
                         <Form.Group>
@@ -82,7 +82,7 @@ const OneNote = ({match}) => {
             <div style={{  display: 'flex', alignItems: 'center', justifyContent: 'center'}} >
                 <br />
                     <Card border="success" style={{ width: '25rem' }}>
-                        <Card.Header>{singleNotes.username}</Card.Header>
+                        <Card.Header>{singleNotes.topic}</Card.Header>
                         <Card.Body>
                             <Card.Title>Duration: {singleNotes.duration}</Card.Title>
                             <Card.Title>Date: {singleNotes.date}</Card.Title>

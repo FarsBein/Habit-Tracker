@@ -17,7 +17,7 @@ router.get('/:id', (req,res) => {
 // create 
 router.post('/add',(req,res) => {
     const note = {
-        username: req.body.username,
+        topic: req.body.topic,
         description: req.body.description,
         duration: Number(req.body.duration),
         date: Date.parse(req.body.date) ? Date.parse(req.body.date) : Date.now()
@@ -31,12 +31,13 @@ router.post('/add',(req,res) => {
 router.post('/update/:id',(req,res) => {
     Notes.findById(req.params.id)
         .then(note => {
-            note.username= req.body.username ? req.body.username : note.username;
+            note.topic= req.body.topic ? req.body.topic : note.topic;
             note.description= req.body.description ? req.body.description : note.description;
             note.duration= req.body.duration ? req.body.duration: note.duration;
+            note.done= req.body.done
             note.date= Date.parse(req.body.date) ? Date.parse(req.body.date) : Date.now();
             note.save()
-                .then(() => res.json('Note is Updated!!'))
+                .then(() => res.json('Note is Updated!! from server:'+req.body.done))
                 .catch((err) => res.status(400).json('Error: '+ err))
         })
         .catch((err) => res.status(400).json('Error: '+ err))

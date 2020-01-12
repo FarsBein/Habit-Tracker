@@ -4,7 +4,7 @@ import Axios from 'axios';
 
 const CreateNote = () => {
     const [newNote,setNewNote] = useState({
-        username: '',
+        topic: '',
         description: '',
         duration: 0,
         date: ''
@@ -26,7 +26,7 @@ const CreateNote = () => {
         Axios.post('http://localhost:5000/notes/add',note)
             .then((res) => console.log(res.data))
             .catch((err)=> console.log(err))
-
+            .then(window.location = 'http://localhost:3000/')
     }
 
     return (
@@ -34,7 +34,7 @@ const CreateNote = () => {
             <Form >
                 <Form.Group controlId="exampleForm.ControlInput1">
                     <Form.Label>Topic</Form.Label>
-                    <Form.Control type="text" name='username' placeholder="Topic Name" onChange={handleChange}/>
+                    <Form.Control type="text" name='topic' placeholder="Topic Name" onChange={handleChange}/>
                 </Form.Group>
                 <Form.Group controlId="exampleForm.ControlInput1">
                     <Form.Label>Duration</Form.Label>

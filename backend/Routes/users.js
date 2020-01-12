@@ -12,8 +12,8 @@ router.get('/',(req,res) => {
 // get one
 // create 
 router.post('/add', (req,res) => {
-    const username = req.body.username
-    const newUser = new User({username}) // or username: username
+    const topic = req.body.topic
+    const newUser = new User({topic}) // or topic: topic
     newUser.save()
         .then(() => res.json('New User Added!'))
         .catch((err) => res.status(400).json('Error: '+ err))

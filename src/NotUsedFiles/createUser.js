@@ -3,28 +3,28 @@ import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 
 const CreateUser = () => {
-    const [username,setUsername] = useState({username: ''})
+    const [topic,settopic] = useState({topic: ''})
     
     const handleChange = (event) => {
-        setUsername({username: event.target.value})
+        settopic({topic: event.target.value})
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
         const newUser = {
-            username: username
+            topic: topic
         }
-        console.log(newUser.username)
+        console.log(newUser.topic)
 
-        axios.post('http://localhost:5000/users/add',newUser.username)
+        axios.post('http://localhost:5000/users/add',newUser.topic)
         .then((res) => console.log(res.data))
         .catch((err)=> console.log(err))
     }
     return (
         <Form>
             <Form.Group controlId="formBasicEmail">
-                <Form.Label>Username</Form.Label>
-                <Form.Control type="text" placeholder="Enter username" onChange={handleChange}/>
+                <Form.Label>topic</Form.Label>
+                <Form.Control type="text" placeholder="Enter topic" onChange={handleChange}/>
                 <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
                 </Form.Text>
