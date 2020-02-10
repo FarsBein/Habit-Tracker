@@ -8,8 +8,6 @@ Used to track daily activities and habits.
 
 - ReactJs
 
-- NodeJs
-
 - ExpressJs
 
 - Json
